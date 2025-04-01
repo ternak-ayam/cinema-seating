@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  seats: Array(25).fill(false), 
   selectedSeats: [],
+  labels: Array.from({ length: 10 }, (_, i) => String.fromCharCode(65 + i)), // A - J
 };
 
 const seatSlice = createSlice({
@@ -23,5 +23,3 @@ const seatSlice = createSlice({
 
 export const { toggleSeat } = seatSlice.actions;
 export default seatSlice.reducer;
-
-
