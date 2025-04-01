@@ -7,14 +7,12 @@ import NavBarGuest from "../partials/NavBarGuest";
 
 const BookingSeat = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-
   return (
     <div>
       {/* Navigasi */}
       <NavBarGuest />
       {/* Section Konten */}
-      <section className="max-w-[1512px] mx-auto pt-20 md:px-16">
+      <section className="max-w-[1512px] mx-auto pt-20 md:px-16 min-h-screen">
         <div className="pt-8 flex flex-col gap-6">
           <BreadCrumb />
           <div className="grid md:grid-cols-12 gap-6">
@@ -53,6 +51,9 @@ const BookingSeat = () => {
         </div>
       </section>
       <ModalSelection isOpen={isModalOpen} onClose={()=>setIsModalOpen(false)} />
+        <section>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et perferendis possimus veniam voluptates, consequatur fuga earum. Doloribus excepturi adipisci rem. Necessitatibus enim in eum nisi distinctio quia temporibus sint natus.</p>
+        </section>
     </div>
   );
 };

@@ -7,11 +7,11 @@ const SeatSelection = () => {
 
   return (
     <div className="grid grid-cols-10 gap-3 p-4 bg-[#F5F5F5]">
-      {Array.from({ length: 50 }, (_, index) => {
-        const row = index % 10; 
-        const col = Math.floor(index / 10); 
-        const seatLabel = `${labels[col]}${row + 1}`; 
-        const isSelected = selectedSeats.includes(index);
+      {Array.from({ length: 60 }, (_, index) => {
+        const row = Math.floor(index / 10); 
+        const col = index % 10; 
+        const seatLabel = `${labels[row]}${col + 1}`; 
+        const isSelected = selectedSeats.includes(seatLabel);
 
         return (
           <button
