@@ -19,8 +19,8 @@ const paymentMethods = [
 export default function ModalSelection({ isOpen, onClose }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const selectedSeats = useSelector((state) => state.seats.selectedSeats);
-  const selectedPaymentMethod = useSelector((state) => state.payment.selectedPaymentMethod);
+  const { selectedSeats, id, name, reference } = useSelector((state) => state.seats);
+  const { selectedPaymentMethod } = useSelector((state) => state.payment);
   const seatPrice = 15000;
   const [isSummaryVisible, setIsSummaryVisible] = useState(false);
 
