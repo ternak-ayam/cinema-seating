@@ -1,19 +1,20 @@
 import LogoTokoEvent from "../assets/img/logo-tokoEvent.png";
+import IconBar from "../assets/bar.svg";
 import { Link } from "react-router";
 
 export default function NavBarGuest() {
   return (
     <header className="top-0 fixed bg-white shadow-sm w-full"> 
-      <nav className="max-w-[1512px] mx-auto flex justify-between px-16 py-5">
+      <nav className="max-w-[1512px] mx-auto flex justify-between px-4 md:px-16 py-5">
         <div className="flex flex-1 justify-start items-center">
           <img src={LogoTokoEvent} alt="logo-tokoevent" className="w-20" />
         </div>
-        <div className="flex items-center justify-center space-x-9 text-gray">
+        <div className="hidden md:flex items-center justify-center space-x-9 text-gray">
           <Link to="/"> Beranda</Link>
           <Link to="/booking-seat">Explore</Link>
           <Link to="/">Daftar Event</Link>
         </div>
-        <div className="flex flex-1 justify-end items-center space-x-3 font-semibold">
+        <div className="hidden md:flex flex-1 justify-end items-center space-x-3 font-semibold">
           <Link to="/" className="px-3 py-2 border border-gray/30 rounded-md">
             Masuk
           </Link>
@@ -23,6 +24,9 @@ export default function NavBarGuest() {
           >
             Daftar
           </Link>
+        </div>
+        <div className="flex md:hidden p-2 border border-gray/30 rounded-md justify-end items-center"> 
+          <img src={IconBar} alt="" className="size-6"/>
         </div>
       </nav>
     </header>

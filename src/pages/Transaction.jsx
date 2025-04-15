@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
 import { clearSeats } from "../features/seating/seatSlice";
+import { clearTime } from "../features/time/timeSlice";
 import { setPaymentMethod } from "../features/payment/paymentSlice";
 
 export default function Transaction() {
@@ -11,6 +12,7 @@ export default function Transaction() {
   const selectedPaymentMethod = useSelector(
     (state) => state.payment.selectedPaymentMethod
   );
+  const selectedTime = useSelector((state) => state.time.selectedTime);
   const seatPrice = 15000; 
   const totalPrice = selectedSeats.length * seatPrice;
   const navigate = useNavigate();
@@ -23,6 +25,7 @@ export default function Transaction() {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
+          dispatch(clearTime());
           dispatch(clearSeats());
           dispatch(setPaymentMethod(null));
 
@@ -55,8 +58,10 @@ export default function Transaction() {
         <div className="flex flex-col space-y-4">
           <div className="bg-white border border-yellow/60 rounded-lg p-6 mt-4 w-[500px]">
             <h2 className="text-xl font-bold">Detail Pemesanan</h2>
-            <p className="mt-2">Kursi Terpilih: {selectedSeats.join(", ")}</p>
+            <p>Jumlah Kursi: {selectedSeats.length} seat</p>
+            <p>Kursi Terpilih: {selectedSeats.join(", ")}</p>
             <p>Total Harga: Rp{totalPrice.toLocaleString()}</p>
+            <p>Waktu Tayang: {selectedTime}</p>
           </div>
           <div className="bg-white border border-yellow/60 rounded-lg p-6 w-[500px]">
             <h2 className="text-xl font-bold">Metode Pembayaran</h2>
