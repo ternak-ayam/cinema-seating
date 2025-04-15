@@ -12,7 +12,7 @@ import IconCopy from "../assets/copy.svg";
 
 export default function SideBar() {
   return (
-    <div className="sidebar min-w-[248px] bg-[#F5F5F5] p-4 h-full flex flex-col justify-between gap-9 font-medium">
+    <div className="sidebar hidden min-w-[248px] bg-[#F5F5F5] p-4 h-full md:flex flex-col justify-between gap-9 font-medium">
       <div className="logo flex items-center justify-center">
         <img src={LogoTokoEvent} alt="logo-toko-event" className="w-24" />
       </div>

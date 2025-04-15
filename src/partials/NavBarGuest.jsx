@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export default function NavBarGuest() {
   return (
-    <header className="top-0 fixed bg-white shadow-sm w-full"> 
+    <header className="top-0 fixed bg-white shadow-sm w-full z-10"> 
       <nav className="max-w-[1512px] mx-auto flex justify-between px-4 md:px-16 py-5">
         <div className="flex flex-1 justify-start items-center">
           <img src={LogoTokoEvent} alt="logo-tokoevent" className="w-20" />
